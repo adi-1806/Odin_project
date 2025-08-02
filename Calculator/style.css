@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  input {
+    width: 260px;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    text-align: right;
+  }
+  
+  #buttonContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #b2ebf2;
+  }
+  
+  /* Specific positioning for Clear and = buttons */
+  #clearBtn {
+    grid-column: 1 / 2;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+  }
+  
+  #clearBtn:hover {
+    background-color: #ffcdd2;
+  }
+  
+  #equalBtn {
+    grid-column: 4 / 5;
+    background-color: #c8e6c9;
+    border: 1px solid #a5d6a7;
+  }
+  
+  #equalBtn:hover {
+    background-color: #a5d6a7;
+  }
+  
