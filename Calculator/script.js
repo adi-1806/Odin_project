@@ -1,44 +1,55 @@
-const buttonContainer = document.createElement("div");
-buttonContainer.id = "buttonContainer";
-const display = document.createElement("input")
+const display = document.createElement("input");
+display.className = "display";
 
-document.body.appendChild(Object.assign(document.createElement("button"), {
-    value: "clear",
-    textContent: "Clear",
-    id: "clearBtn",
-    onclick: () => {display.value = "";}
-    })
-);
+const buttonGrid = document.createElement("div");
+buttonGrid.id = "buttonGrid";
 
-document.body.appendChild(Object.assign(document.createElement("button"), {
-value: "=",
-textContent: "=",
-id: "equalBtn",
-onclick: () => numberCalculator(),
-}));
+const bottomRow = document.createElement("div");
+bottomRow.id = "bottomRow";
 
-document.body.appendChild(buttonContainer);
+// Add display
 document.body.appendChild(display);
 
+// Add button grid
+document.body.appendChild(buttonGrid);
 
+// Add bottom buttons row
+document.body.appendChild(bottomRow);
+
+// Create number buttons
 for (let i = 0; i < 10; i++) {
   const btn = document.createElement("button");
   btn.value = i;
-  btn.textContent = i; // Show the number on the button
-  btn.style.margin = "5px"; // Optional styling
-  buttonContainer.appendChild(btn); // Append button to the div
+  btn.textContent = i;
+  btn.className = "btn";
   btn.onclick = () => displayEntry(i);
+  buttonGrid.appendChild(btn);
 }
 
-operators = [ "+", "-", "*", "/"]
-operators.forEach(item => {
-    const btn = document.createElement("button");
-    btn.value = item;
-    btn.textContent = item; // Show the number on the button
-    btn.style.margin = "5px"; // Optional styling
-    buttonContainer.appendChild(btn); // Append button to the div
-    btn.onclick = () => displayEntry(item);
-})
+// Create operator buttons
+const operators = ["+", "-", "*", "/"];
+operators.forEach(op => {
+  const btn = document.createElement("button");
+  btn.value = op;
+  btn.textContent = op;
+  btn.className = "btn operator";
+  btn.onclick = () => displayEntry(op);
+  buttonGrid.appendChild(btn);
+});
+
+// Clear button
+const clearBtn = document.createElement("button");
+clearBtn.textContent = "Clear";
+clearBtn.id = "clearBtn";
+clearBtn.onclick = () => (display.value = "");
+bottomRow.appendChild(clearBtn);
+
+// Equal button
+const equalBtn = document.createElement("button");
+equalBtn.textContent = "=";
+equalBtn.id = "equalBtn";
+equalBtn.onclick = () => numberCalculator();
+bottomRow.appendChild(equalBtn);
 
 function numberCalculator(){
     let inputValue = display.value;

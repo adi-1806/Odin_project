@@ -1,63 +1,64 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    padding-top: 30px;
   }
   
-  input {
+  .display {
     width: 260px;
+    height: 40px;
     font-size: 24px;
-    padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    background-color: #ffffff;
     text-align: right;
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
   }
   
-  #buttonContainer {
+  #buttonGrid {
     display: grid;
     grid-template-columns: repeat(4, 60px);
     gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
-  button {
-    padding: 15px;
+  #bottomRow {
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+  }
+  
+  .btn, #clearBtn, #equalBtn {
+    height: 50px;
     font-size: 18px;
-    background-color: #e0f7fa;
-    border: 1px solid #b2ebf2;
+    border: none;
     border-radius: 8px;
+    background-color: #e0f7fa;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background 0.2s ease;
   }
   
-  button:hover {
-    background-color: #b2ebf2;
+  .operator {
+    background-color: #ffe0b2;
   }
   
-  /* Specific positioning for Clear and = buttons */
   #clearBtn {
-    grid-column: 1 / 2;
-    background-color: #ffebee;
-    border: 1px solid #ffcdd2;
-  }
-  
-  #clearBtn:hover {
     background-color: #ffcdd2;
+    flex: 1;
+    margin-right: 10px;
   }
   
   #equalBtn {
-    grid-column: 4 / 5;
     background-color: #c8e6c9;
-    border: 1px solid #a5d6a7;
+    flex: 1;
   }
   
+  .btn:hover,
+  #clearBtn:hover,
   #equalBtn:hover {
-    background-color: #a5d6a7;
+    opacity: 0.8;
   }
-  
